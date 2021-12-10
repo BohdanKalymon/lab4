@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Trains</title>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="my-3">/add-ticket-confirmation</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Type</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${ticket.from.name}">New York</td>
+                    <td th:text="${ticket.to.name}">Los Angeles</td>
+                    <td th:text="${ticket.ticketType.name}">FIRST CLASS</td>
+                </tr>
+                </tbody>
+            </table>
+            <h5 class="text-center" th:text="${T(java.lang.String).format('Price: $%.2f', price)}">Price: $42.00</h5>
+            <form method="post">
+                <button class="btn btn-primary mb-4" type="submit">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
